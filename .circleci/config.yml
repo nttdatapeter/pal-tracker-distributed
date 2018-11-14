@@ -36,6 +36,8 @@ jobs:
           name: Test and build
           command: |
             dotnet test
+            chmod +x ./scripts/build.sh
+            chmod +x ./scripts/migrate-databases.sh
             ./scripts/build.sh $CIRCLE_SHA1
 
       - store_artifacts:
