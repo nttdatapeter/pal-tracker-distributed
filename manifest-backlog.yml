@@ -6,7 +6,6 @@ applications:
   routes:
   - route: backlog-pal-peter.apps.pikes.pal.pivotal.io
   path: Applications/BacklogServer/bin/Release/netcoreapp2.1/publish
-  env:
-    REGISTRATION_SERVER_ENDPOINT: http://registration-pal-peter.apps.pikes.pal.pivotal.io/
   services:
   - tracker-backlog-database
+  - tracker-service-registry

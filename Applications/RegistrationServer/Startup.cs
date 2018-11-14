@@ -7,6 +7,7 @@ using Microsoft.Extensions.Logging;
 using Projects;
 using Steeltoe.CloudFoundry.Connector.MySql.EFCore;
 using Users;
+using Pivotal.Discovery.Client;
 
 namespace RegistrationServer
 {
@@ -33,6 +34,7 @@ namespace RegistrationServer
             services.AddScoped<IProjectDataGateway, ProjectDataGateway>();
             services.AddScoped<IUserDataGateway, UserDataGateway>();
             services.AddScoped<IRegistrationService, RegistrationService>();
+            services.AddDiscoveryClient(Configuration);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -42,6 +44,7 @@ namespace RegistrationServer
             loggerFactory.AddDebug();
 
             app.UseMvc();
+            app.UseDiscoveryClient();
         }
     }
 }
