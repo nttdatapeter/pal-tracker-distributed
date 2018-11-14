@@ -1,0 +1,302 @@
+{
+	"info": {
+		"_postman_id": "648b0674-fd6f-4e0d-be72-997de40095a2",
+		"name": "PAL-Distributed",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "CREATE Registration",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"name\": \"Pete2\"}"
+				},
+				"url": {
+					"raw": "{{registration}}/registration",
+					"host": [
+						"{{registration}}"
+					],
+					"path": [
+						"registration"
+					]
+				},
+				"description": "Generated from a curl request: \ncurl -i -X POST -H \\\"Content-Type: application/json\\\" localhost:8883/registration -d '{\\\"name\\\": \\\"Pete\\\"}'"
+			},
+			"response": []
+		},
+		{
+			"name": "GET Registration",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{registration}}/users/19",
+					"host": [
+						"{{registration}}"
+					],
+					"path": [
+						"users",
+						"19"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET accounts",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{registration}}/accounts?ownerId=19",
+					"host": [
+						"{{registration}}"
+					],
+					"path": [
+						"accounts"
+					],
+					"query": [
+						{
+							"key": "ownerId",
+							"value": "19"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Project",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"name\": \"Project B\", \"accountId\": 16}"
+				},
+				"url": {
+					"raw": "{{registration}}/projects",
+					"host": [
+						"{{registration}}"
+					],
+					"path": [
+						"projects"
+					]
+				},
+				"description": "Generated from a curl request: \ncurl -i -X POST -H \\\"Content-Type: application/json\\\" localhost:8883/projects -d '{\\\"name\\\": \\\"Basket Weaving\\\", \\\"accountId\\\": <ACCOUNT-ID>}'"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Project",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{registration}}/projects?accountId=1",
+					"host": [
+						"{{registration}}"
+					],
+					"path": [
+						"projects"
+					],
+					"query": [
+						{
+							"key": "accountId",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Allocation",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"projectId\": 25, \"userId\": 16, \"firstDay\": \"2015-05-17\", \"lastDay\": \"2015-05-18\"}"
+				},
+				"url": {
+					"raw": "{{allocation}}/allocations",
+					"host": [
+						"{{allocation}}"
+					],
+					"path": [
+						"allocations"
+					]
+				},
+				"description": "Generated from a curl request: \ncurl -i -X POST -H \\\"Content-Type: application/json\\\" localhost:8881/allocations -d '{\\\"projectId\\\": <PROJECT-ID>, \\\"userId\\\": <USER-ID>, \\\"firstDay\\\": \\\"2015-05-17\\\", \\\"lastDay\\\": \\\"2015-05-18\\\"}'"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Allocation",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{allocation}}/allocations?projectId=1",
+					"host": [
+						"{{allocation}}"
+					],
+					"path": [
+						"allocations"
+					],
+					"query": [
+						{
+							"key": "projectId",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Stories",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"projectId\": 25, \"name\": \"Find some reeds\"}"
+				},
+				"url": {
+					"raw": "{{backlog}}/stories",
+					"host": [
+						"{{backlog}}"
+					],
+					"path": [
+						"stories"
+					]
+				},
+				"description": "Generated from a curl request: \ncurl -i -X POST -H \\\"Content-Type: application/json\\\" localhost:8882/stories -d '{\\\"projectId\\\": <PROJECT-ID>, \\\"name\\\": \\\"Find some reeds\\\"}'"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Stories",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{backlog}}/stories?projectId=1",
+					"host": [
+						"{{backlog}}"
+					],
+					"path": [
+						"stories"
+					],
+					"query": [
+						{
+							"key": "projectId",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Time Entries",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"projectId\": 25, \"userId\": 16, \"date\": \"2015-05-17\", \"hours\": 6}"
+				},
+				"url": {
+					"raw": "{{timesheet}}/time-entries/",
+					"host": [
+						"{{timesheet}}"
+					],
+					"path": [
+						"time-entries",
+						""
+					]
+				},
+				"description": "Generated from a curl request: \ncurl -i -X POST -H \\\"Content-Type: application/json\\\" localhost:8884/time-entries/ -d '{\\\"projectId\\\": <PROJECT-ID>, \\\"userId\\\": <USER-ID>, \\\"date\\\": \\\"2015-05-17\\\", \\\"hours\\\": 6}'"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Time Entries",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{timesheet}}/time-entries?userId=1",
+					"host": [
+						"{{timesheet}}"
+					],
+					"path": [
+						"time-entries"
+					],
+					"query": [
+						{
+							"key": "userId",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
