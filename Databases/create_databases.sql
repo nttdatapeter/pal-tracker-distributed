@@ -19,4 +19,4 @@ CREATE DATABASE tracker_timesheets_dotnet_dev;
 CREATE DATABASE tracker_allocations_dotnet_test;
 CREATE DATABASE tracker_backlog_dotnet_test;
 CREATE DATABASE tracker_registration_dotnet_test;
-CREATE DATABASE tracker_timesheets_dotnet_test;cd
+CREATE DATABASE tracker_timesheets_dotnet_test;
